@@ -1,0 +1,835 @@
+<!DOCTYPE html>
+<html lang="en">
+  <head>
+    <meta charset="UTF-8" />
+    <meta name="viewport" content="width=device-width, initial-scale=1.0" />
+    <title>Research Lab Management System</title>
+    <link rel="stylesheet" href="assets/css/bootstrap.min.css" />
+        <link rel="stylesheet" href="fontawesome/css/all.min.css">
+    <link rel="stylesheet" href="assets/css/style.css" />
+  </head>
+  <body>
+    <div class="container">
+      <nav class="navbar navbar-expand-lg">
+        <div class="container-fluid">
+          <!-- Left side: Logo -->
+          <a class="navbar-brand" href="#">
+            <img src="assets/img/logo.png" alt="Logo" style="height: 40px" />
+          </a>
+
+          <!-- Right side: Button and Menu -->
+          <div class="d-flex flex-column align-items-end w-100">
+            <!-- Top: Join Button -->
+            <div>
+              <a href="#" class="btn mb-2 btn-research">Join Research</a>
+            </div>
+
+            <!-- Bottom: Menu aligned to right -->
+            <div
+              class="collapse navbar-collapse justify-content-end"
+              id="navbarSupportedContent"
+            >
+              <ul class="navbar-nav mb-2 mb-lg-0">
+                <li class="nav-item dropdown">
+                  <a
+                    class="nav-link dropdown-toggle"
+                    href="index.html"
+                    role="button"
+                    data-bs-toggle="dropdown"
+                    aria-expanded="false"
+                  >
+                    Home
+                  </a>
+                  <ul class="dropdown-menu">
+                    <li><a class="dropdown-item" href="#">Action</a></li>
+                    <li>
+                      <a class="dropdown-item" href="#">Another action</a>
+                    </li>
+                    <li><hr class="dropdown-divider" /></li>
+                    <li>
+                      <a class="dropdown-item" href="#">Something else here</a>
+                    </li>
+                  </ul>
+                </li>
+                <li class="nav-item">
+                  <a class="nav-link" href="research.html">Research</a>
+                </li>
+                <li class="nav-item dropdown">
+                  <a
+                    class="nav-link dropdown-toggle"
+                    href="people.html"
+                    role="button"
+                    data-bs-toggle="dropdown"
+                    aria-expanded="false"
+                  >
+                    People
+                  </a>
+                  <ul class="dropdown-menu">
+                    <li><a class="dropdown-item" href="#">Action</a></li>
+                    <li>
+                      <a class="dropdown-item" href="#">Another action</a>
+                    </li>
+                    <li><hr class="dropdown-divider" /></li>
+                    <li>
+                      <a class="dropdown-item" href="#">Something else here</a>
+                    </li>
+                  </ul>
+                </li>
+
+                <li class="nav-item dropdown">
+                  <a
+                    class="nav-link dropdown-toggle"
+                    href="publication.html"
+                    role="button"
+                    data-bs-toggle="dropdown"
+                    aria-expanded="false"
+                  >
+                    Publications
+                  </a>
+                  <ul class="dropdown-menu">
+                    <li><a class="dropdown-item" href="#">Action</a></li>
+                    <li>
+                      <a class="dropdown-item" href="#">Another action</a>
+                    </li>
+                    <li><hr class="dropdown-divider" /></li>
+                    <li>
+                      <a class="dropdown-item" href="#">Something else here</a>
+                    </li>
+                  </ul>
+                </li>
+
+                <li class="nav-item dropdown">
+                  <a
+                    class="nav-link dropdown-toggle"
+                    href="event.html"
+                    role="button"
+                    data-bs-toggle="dropdown"
+                    aria-expanded="false"
+                  >
+                    Events
+                  </a>
+                  <ul class="dropdown-menu">
+                    <li><a class="dropdown-item" href="#">Action</a></li>
+                    <li>
+                      <a class="dropdown-item" href="#">Another action</a>
+                    </li>
+                    <li><hr class="dropdown-divider" /></li>
+                    <li>
+                      <a class="dropdown-item" href="#">Something else here</a>
+                    </li>
+                  </ul>
+                </li>
+
+                <li class="nav-item dropdown">
+                  <a
+                    class="nav-link dropdown-toggle"
+                    href="blog.html"
+                    role="button"
+                    data-bs-toggle="dropdown"
+                    aria-expanded="false"
+                  >
+                    Blog
+                  </a>
+                  <ul class="dropdown-menu">
+                    <li><a class="dropdown-item" href="#">Action</a></li>
+                    <li>
+                      <a class="dropdown-item" href="#">Another action</a>
+                    </li>
+                    <li><hr class="dropdown-divider" /></li>
+                    <li>
+                      <a class="dropdown-item" href="#">Something else here</a>
+                    </li>
+                  </ul>
+                <li class="nav-item">
+                  <a class="nav-link" href="future_member.html">Future Member</a>
+                </li>
+
+
+              </ul>
+            </div>
+          </div>
+        </div>
+      </nav>
+    </div>
+    <!-- Nav-ber end -->
+    <!-- Nav-ber end -->
+
+    <!-- Carousel HTML -->
+    <div id="researchCarousel" class="carousel slide" data-bs-ride="carousel">
+      <div class="carousel-inner">
+        <!-- Slide 1 -->
+        <div class="carousel-item active">
+          <img
+            src="assets/img/slider/images (1).jpeg"
+            class="d-block w-100"
+            style="height: 400px"
+            alt="Lab Image 1"
+          />
+          <div class="carousel-caption">
+            <div class="carousel-caption-custom text-center">
+              <h2>WHERE IT ALL BEGAN</h2>
+              <p>
+                Congratulations Dr Rushmore: his research to develop a new
+                detection strategy for cancer has received a new National Health
+                and Medical Research Council
+              </p>
+              <a href="#">READ MORE</a>
+            </div>
+          </div>
+        </div>
+
+        <!-- Slide 2 -->
+        <div class="carousel-item">
+          <img
+            src="assets/img/slider/images (2).jpeg"
+            class="d-block w-100"
+            style="height: 400px"
+            alt="Lab Image 2"
+          />
+          <div class="carousel-caption">
+            <div class="carousel-caption-custom text-center">
+              <h2>INNOVATING THE FUTURE</h2>
+              <p>
+                Our lab is working on groundbreaking AI for healthcare
+                diagnostics and treatment planning.
+              </p>
+              <a href="#">DISCOVER</a>
+            </div>
+          </div>
+        </div>
+      </div>
+
+      <!-- Controls -->
+      <button
+        class="carousel-control-prev"
+        type="button"
+        data-bs-target="#researchCarousel"
+        data-bs-slide="prev"
+      >
+        <span class="carousel-control-prev-icon" aria-hidden="true"></span>
+        <span class="visually-hidden">Previous</span>
+      </button>
+      <button
+        class="carousel-control-next"
+        type="button"
+        data-bs-target="#researchCarousel"
+        data-bs-slide="next"
+      >
+        <span class="carousel-control-next-icon" aria-hidden="true"></span>
+        <span class="visually-hidden">Next</span>
+      </button>
+    </div>
+    <!-- Carousel end -->
+    <!-- Carousel end -->
+
+    <div class="container mt-5">
+      <div class="row g-4">
+        <!-- Card 1 -->
+        <div class="col-md-3">
+          <div class="card h-100 shadow-sm">
+            <img
+              src="assets/img/slider/images (1).jpeg"
+              class="card-img-top"
+              alt="..."
+            />
+            <div class="card-body">
+              <h5 class="card-title" style="font-weight: bold">
+                Immunology: T-cell tweaks to target tumours
+              </h5>
+              <p class="card-text">
+                Some quick example text to build on the card title and make up
+                the bulk of the card’s content.
+              </p>
+              <a
+                href="#"
+                style="
+                  color: #b80000;
+                  text-decoration: underline;
+                  font-weight: bold;
+                "
+                class=""
+                >READ MORE</a
+              >
+            </div>
+          </div>
+        </div>
+
+        <div class="col-md-3">
+          <div class="card h-100 shadow-sm">
+            <img
+              src="assets/img/slider/images (1).jpeg"
+              class="card-img-top"
+              alt="..."
+            />
+            <div class="card-body">
+              <h5 class="card-title" style="font-weight: bold">
+                Immunology: T-cell tweaks to target tumours
+              </h5>
+              <p class="card-text">
+                Some quick example text to build on the card title and make up
+                the bulk of the card’s content.
+              </p>
+              <a
+                href="#"
+                style="
+                  color: #b80000;
+                  text-decoration: underline;
+                  font-weight: bold;
+                "
+                class=""
+                >READ MORE</a
+              >
+            </div>
+          </div>
+        </div>
+        <div class="col-md-3">
+          <div class="card h-100 shadow-sm">
+            <img
+              src="assets/img/slider/images (1).jpeg"
+              class="card-img-top"
+              alt="..."
+            />
+            <div class="card-body">
+              <h5 class="card-title" style="font-weight: bold">
+                Immunology: T-cell tweaks to target tumours
+              </h5>
+              <p class="card-text">
+                Some quick example text to build on the card title and make up
+                the bulk of the card’s content.
+              </p>
+              <a
+                href="#"
+                style="
+                  color: #b80000;
+                  text-decoration: underline;
+                  font-weight: bold;
+                "
+                class=""
+                >READ MORE</a
+              >
+            </div>
+          </div>
+        </div>
+
+        <div class="col-md-3">
+          <div class="card h-100 shadow-sm">
+            <img
+              src="assets/img/slider/images (1).jpeg"
+              class="card-img-top"
+              alt="..."
+            />
+            <div class="card-body">
+              <h5 class="card-title" style="font-weight: bold">
+                Immunology: T-cell tweaks to target tumours
+              </h5>
+              <p class="card-text">
+                Some quick example text to build on the card title and make up
+                the bulk of the card’s content.
+              </p>
+              <a
+                href="#"
+                style="
+                  color: #b80000;
+                  text-decoration: underline;
+                  font-weight: bold;
+                "
+                class=""
+                >READ MORE</a
+              >
+            </div>
+          </div>
+        </div>
+      </div>
+    </div>
+    <!-- First card end -->
+    <!-- First card end -->
+
+    <div class="container pt-5">
+      <div class="row">
+        <div class="col-md-4">
+          <div class="card h-100 shadow-sm">
+            <div class="card-body">
+              <h5 class="card-title" style="font-weight: bold">
+                Immunology: T-cell tweaks to target tumours
+              </h5>
+              <p class="card-text">
+                Some quick example text to build on the card title and make up
+                the bulk of the card’s content.
+              </p>
+              <a
+                href="#"
+                style="
+                  color: #b80000;
+                  text-decoration: underline;
+                  font-weight: bold;
+                "
+                class=""
+                >READ MORE</a
+              >
+            </div>
+          </div>
+        </div>
+
+        <div class="col-md-4">
+          <div class="card h-100 shadow-sm">
+            <img
+              src="assets/img/slider/images (1).jpeg"
+              class="card-img-top"
+              alt="..."
+            />
+            <div class="card-body">
+              <h5 class="card-title" style="font-weight: bold">
+                Immunology: T-cell tweaks to target tumours
+              </h5>
+              <p class="card-text">
+                Some quick example text to build on the card title and make up
+                the bulk of the card’s content.
+              </p>
+            </div>
+          </div>
+        </div>
+
+        <div class="col-md-4">
+          <div class="card h-100 shadow-sm">
+            <div class="card-body">
+              <h5 class="card-title" style="font-weight: bold">
+                Latest Events
+              </h5>
+              <div class="event">
+                <h6 class="" style="font-weight: bold">
+                  Haematopoietic stem cell transplantatio for autommue diseases
+                </h6>
+                <data value="">March 6, 2013</data>
+              </div>
+              <br />
+              <div class="event">
+                <h6 class="" style="font-weight: bold">
+                  Antithrombotic therapy for patients with STEMI undergoing
+                  primary PCI
+                </h6>
+                <data value="">March 6, 2013</data>
+              </div>
+              <br />
+              <div class="event">
+                <h6 class="" style="font-weight: bold">
+                  Commonality with cancer 2016
+                </h6>
+                <data value="">March 6, 2013</data>
+              </div>
+              <br />
+
+              <a
+                href="#"
+                style="
+                  color: #b80000;
+                  text-decoration: underline;
+                  font-weight: bold;
+                "
+                class=""
+                >VIEW ALL</a
+              >
+            </div>
+          </div>
+        </div>
+      </div>
+    </div>
+
+    <!-- end card -->
+    <!-- end card -->
+
+    <div class="container pt-5">
+      <div
+        class="position-relative"
+        style="height: 150px; overflow: hidden; border-radius: 10px"
+      >
+        <!-- Background Image -->
+        <img
+          src="assets/img/slider/images (2).jpeg"
+          class="w-100 position-absolute top-0 start-0"
+          style="height: 150px; object-fit: cover; z-index: 1"
+          alt="Background"
+        />
+
+        <!-- Red Transparent Overlay -->
+        <div
+          class="position-absolute top-0 start-0 w-100 h-100"
+          style="background-color: rgba(217, 0, 0, 0.75); z-index: 2"
+        >
+          <div
+            class="row h-100 d-flex align-items-center text-white text-center"
+          >
+            <div class="col-md-4">
+              <h3>34</h3>
+              <h5>JOURNAL ARTICLES</h5>
+            </div>
+            <div class="col-md-4">
+              <h3>34</h3>
+              <h5>JOURNAL ARTICLES</h5>
+            </div>
+            <div class="col-md-4">
+              <h3>34</h3>
+              <h5>JOURNAL ARTICLES</h5>
+            </div>
+          </div>
+        </div>
+      </div>
+    </div>
+
+    <!-- Count journal section -->
+    <!-- Count journal section -->
+
+
+<div class="container py-5">
+  <div class="row">
+    <!-- Left Column -->
+    <div class="col-md-5 p-3">
+      <h5 class="fw-bold">About Publications Group</h5>
+      <p>Lorem ipsum dolor sit amet, consectetur adipiscing elit. Etiam convallis elit id imperdiet.</p>
+      <ul>
+        <li>An Electrochemical Method for the Detection of Disease-Specific Exosomes.</li>
+        <li>Jharda Yadav, Esenlia Oriachack, Jazmul Jhaone.</li>
+        <li>Kimli Yang, Dr. Rushmore.</li>
+      </ul>
+      <p>Lorem ipsum dolor sit amet, consectetur adipiscing elit. Etiam convallis elit id odio imperdiet feugiat.</p>
+      <a href="#" class="text-danger fw-bold">View all Publications</a>
+    </div>
+
+    <!-- Right Column -->
+    <div class="col-md-7">
+      <div class="bg-white p-4 shadow rounded position-relative" style="z-index: 2;">
+        <!-- Publication Item (repeatable) -->
+        <div class="d-flex mb-4 p-3">
+          <div class="me-3">
+            <div class="rounded-circle border border-danger d-flex align-items-center justify-content-center" style="width: 40px; height: 40px;">
+              <i class="bi bi-journal-text text-danger"></i>
+            </div>
+          </div>
+          <div>
+            <h6 class="fw-bold">Magnetofluidics for manipulation of convective heat transfer</h6>
+            <small class="text-muted">[287] A. Teo, K. H. H. Li, N.-T. Youuyen, W. Guo, N. Heere, H.D. Xi, C. W. Tsoo, W. Li, S. H. Tan.</small>
+            <div>
+              <a href="#" class="small"><i class="bi bi-box-arrow-up-right me-1"></i>Publisher's website</a>
+            </div>
+          </div>
+        </div>
+
+        <div class="d-flex mb-4 p-3">
+          <div class="me-3">
+            <div class="rounded-circle border border-danger d-flex align-items-center justify-content-center" style="width: 40px; height: 40px;">
+              <i class="bi bi-journal-text text-danger"></i>
+            </div>
+          </div>
+          <div>
+            <h6 class="fw-bold">Magnetofluidics for manipulation of convective heat transfer</h6>
+            <small class="text-muted">[287] A. Teo, K. H. H. Li, N.-T. Youuyen, W. Guo, N. Heere, H.D. Xi, C. W. Tsoo, W. Li, S. H. Tan.</small>
+            <div>
+              <a href="#" class="small"><i class="bi bi-box-arrow-up-right me-1"></i>Publisher's website</a>
+            </div>
+          </div>
+        </div>
+        <div class="d-flex mb-4 p-3">
+          <div class="me-3">
+            <div class="rounded-circle border border-danger d-flex align-items-center justify-content-center" style="width: 40px; height: 40px;">
+              <i class="bi bi-journal-text text-danger"></i>
+            </div>
+          </div>
+          <div>
+            <h6 class="fw-bold">Magnetofluidics for manipulation of convective heat transfer</h6>
+            <small class="text-muted">[287] A. Teo, K. H. H. Li, N.-T. Youuyen, W. Guo, N. Heere, H.D. Xi, C. W. Tsoo, W. Li, S. H. Tan.</small>
+            <div>
+              <a href="#" class="small"><i class="bi bi-box-arrow-up-right me-1"></i>Publisher's website</a>
+            </div>
+          </div>
+        </div>
+
+      </div>
+    </div>
+  </div>
+</div>
+
+<!-- Research List show end -->
+<!-- Research List show end -->
+
+
+
+<div class="container py-5">
+  <div class="row">
+    <!-- Left Profile Section -->
+    <div class="col-md-4">
+      <div class="card border-0">
+        <img src="assets/img/sir/Md-Sohel-8.png" class="card-img-top" alt="Dr. Rushmore">
+        <div class="card-body bg-light">
+          <h6 class="fw-bold mb-2">Dr. Rushmore</h6>
+          <p style="font-size: 14px;">
+            Lorem ipsum dolor sit amet, consectetur elit. Etiam convallis elit id imperdiet. Quisque commodo ornare tortor.
+          </p>
+          <a href="#" class="text-danger fw-bold" style="font-size: 13px;">READ MORE</a>
+        </div>
+      </div>
+    </div>
+
+    <!-- Right Timeline Section -->
+    <div class="col-md-8">
+      <div class="timeline">
+        <!-- Item 1 -->
+        <div class="timeline-item">
+          <span class="timeline-dot bg-success"></span>
+          <div class="d-flex">
+            <div class="event-date">March 2012</div>
+            <div class="event-content">
+              <div class="event-title text-success">California Conference</div>
+              <div class="event-sub">California National University, California, USA</div>
+            </div>
+          </div>
+        </div>
+
+        <!-- Item 2 -->
+        <div class="timeline-item">
+          <span class="timeline-dot bg-warning"></span>
+          <div class="d-flex">
+            <div class="event-date">March 2007</div>
+            <div class="event-content">
+              <div class="event-title text-warning">PHD</div>
+              <div class="event-sub">Kusan National University, Busan, South Korea</div>
+            </div>
+          </div>
+        </div>
+
+        <!-- Item 3 -->
+        <div class="timeline-item">
+          <span class="timeline-dot bg-danger"></span>
+          <div class="d-flex">
+            <div class="event-date">September 1999</div>
+            <div class="event-content">
+              <div class="event-title text-danger">MSc</div>
+              <div class="event-sub">University of California, Davis, USA</div>
+            </div>
+          </div>
+        </div>
+
+        <!-- Item 4 -->
+        <div class="timeline-item">
+          <span class="timeline-dot bg-primary"></span>
+          <div class="d-flex">
+            <div class="event-date">August 1998</div>
+            <div class="event-content">
+              <div class="event-title text-primary">BSc (Hons)</div>
+              <div class="event-sub">University of California, Davis, USA</div>
+            </div>
+          </div>
+        </div>
+
+      </div>
+    </div>
+  </div>
+</div>
+
+<!-- Founder Details end -->
+<!-- Founder Details end -->
+
+
+    <div class="container pt-5">
+      <div class="row">
+
+        <div class="col-md-4">
+          <div class="card h-100 shadow-sm">
+            <img
+              src="assets/img/slider/images (1).jpeg"
+              class="card-img-top"
+              alt="..."
+            />
+            <div class="card-body">
+              <h5 class="card-title" style="font-weight: bold">
+                Susmita sen
+              </h5>
+              <p class="card-text">
+                student
+              </p>
+            </div>
+          </div>
+        </div>
+
+                <div class="col-md-4">
+          <div class="card h-100 shadow-sm">
+            <img
+              src="assets/img/slider/images (1).jpeg"
+              class="card-img-top"
+              alt="..."
+            />
+            <div class="card-body">
+              <h5 class="card-title" style="font-weight: bold">
+                Nai Nai Yunge
+              </h5>
+              <p class="card-text">
+                PHD Student
+              </p>
+            </div>
+          </div>
+        </div>
+
+                <div class="col-md-4">
+          <div class="card h-100 shadow-sm">
+            <img
+              src="assets/img/slider/images (1).jpeg"
+              class="card-img-top"
+              alt="..."
+            />
+            <div class="card-body">
+              <h5 class="card-title" style="font-weight: bold">
+                Mike Joe
+              </h5>
+              <p class="card-text">
+                PHD Student
+              </p>
+            </div>
+          </div>
+        </div>
+      </div>
+      <div class="d-flex justify-content-end py-4">
+                      <a
+                href="#"
+                style="
+                  color: #b80000;
+                  text-decoration: underline;
+                  font-weight: bold;
+                "
+                class=""
+                >VIEW ALL</a
+              >
+      </div>
+    </div>
+  <!-- Research member end -->
+  <!-- Research member end -->
+   <footer class="bg-dark text-white">
+    <div class="container-fluid">
+      <div class="row">
+            <div class="col-md-3 p-4">
+        <a class="logo" href="#">
+          <img class="w-75" src="assets/img/logo.png" alt="">
+        </a>
+        <div class="address py-3">
+          <h5>Address</h5>
+          <div style="color: rgb(189, 190, 190);">
+          <p>UGC Micro and Nanotechnology Centre ugc campus, Pacific University 2345 Southern Road State Highway, Southbound 57512 Australia</p>            
+          </div>
+
+        </div>
+        <div class="contact">
+          <h5>Contact Information</h5>
+          <div style="color: rgb(189, 190, 190);">
+            <p>Call: +8801727452728</p>
+            <p>Email: academix@mail.com</p>
+          </div>
+          
+        </div>
+      </div>
+
+
+      <div class="col-md-3 p-4">
+          <h5>Latest Events</h5>
+
+          <div class="research_list">
+            <p class="" style="color: rgb(189, 190, 190);">Haematopoietic Stem Cell Transplantation For Autoimmune Diseases</p>
+            <p style="color: rgb(189, 190, 190);">march 6,2013</p>
+          </div>
+          <div class="research_list">
+            <p class="" style="color: rgb(189, 190, 190);">Haematopoietic Stem Cell Transplantation For Autoimmune Diseases</p>
+            <p style="color: rgb(189, 190, 190);">march 6,2013</p>
+          </div>
+          <div class="research_list">
+            <p class="" style="color: rgb(189, 190, 190);">Haematopoietic Stem Cell Transplantation For Autoimmune Diseases</p>
+            <p style="color: rgb(189, 190, 190);">march 6,2013</p>
+          </div>
+
+                                <a
+                href="#"
+                style="
+                  color: #b80000;
+                  text-decoration: underline;
+                  font-weight: bold;
+                "
+                class=""
+                >View all Events</a
+              >
+
+      </div>
+
+            <div class="col-md-3 p-4">
+          <h5>Latest Events</h5>
+
+          <div class="research_list">
+            <p class="" style="color: rgb(189, 190, 190);">Haematopoietic Stem Cell Transplantation For Autoimmune Diseases</p>
+            <p style="color: rgb(189, 190, 190);">march 6,2013</p>
+          </div>
+          <div class="research_list">
+            <p class="" style="color: rgb(189, 190, 190);">Haematopoietic Stem Cell Transplantation For Autoimmune Diseases</p>
+            <p style="color: rgb(189, 190, 190);">march 6,2013</p>
+          </div>
+          <div class="research_list">
+            <p class="" style="color: rgb(189, 190, 190);">Haematopoietic Stem Cell Transplantation For Autoimmune Diseases</p>
+            <p style="color: rgb(189, 190, 190);">march 6,2013</p>
+          </div>
+
+                                <a
+                href="#"
+                style="
+                  color: #b80000;
+                  text-decoration: underline;
+                  font-weight: bold;
+                "
+                class=""
+                >View all Events</a
+              >
+
+      </div>
+
+
+            <div class="col-md-3 p-4">
+          <h5>Latest Events</h5>
+
+          <div class="research_list">
+            <p class="" style="color: rgb(189, 190, 190);">Haematopoietic Stem Cell Transplantation For Autoimmune Diseases</p>
+            <p style="color: rgb(189, 190, 190);">march 6,2013</p>
+          </div>
+          <div class="research_list">
+            <p class="" style="color: rgb(189, 190, 190);">Haematopoietic Stem Cell Transplantation For Autoimmune Diseases</p>
+            <p style="color: rgb(189, 190, 190);">march 6,2013</p>
+          </div>
+          <div class="research_list">
+            <p class="" style="color: rgb(189, 190, 190);">Haematopoietic Stem Cell Transplantation For Autoimmune Diseases</p>
+            <p style="color: rgb(189, 190, 190);">march 6,2013</p>
+          </div>
+
+                                <a
+                href="#"
+                style="
+                  color: #b80000;
+                  text-decoration: underline;
+                  font-weight: bold;
+                "
+                class=""
+                >View all Events</a
+              >
+
+      </div>
+
+    </div>
+    </div>
+
+    <div class="bg-secondary ">
+      <div class="container d-flex justify-content-between pb-2 pt-3">
+      <p>Copyright@ 2025 <span style="color: #d90000;">Mohammad Tahmid</span></p>
+      <p>Developed <span style="color: #d90000;">Mohammad Tahmid</span></p>
+      </div>
+
+    </div>
+   </footer>
+
+
+
+
+<!-- Bootstrap Icons -->
+    <link rel="stylesheet" href="https://cdn.jsdelivr.net/npm/bootstrap-icons@1.10.5/font/bootstrap-icons.css">
+    <script src="assets/js/bootstrap.bundle.min.js"></script>
+  </body>
+</html>
