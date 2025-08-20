@@ -1,4 +1,27 @@
-        <footer class="footer">
+    <script type="text/javaScript">
+        function confirmation(ev){
+            ev.preventDefault();
+
+            var urlToRedirect = ev.currentTarget.getAttribute('href');
+
+            console.log(urlToRedirect);
+
+            swal({
+                title:"Are you sure to Delete this?",
+                text:"This delete will be parmanent",
+                icon:"warning",
+                buttons: true,
+                dangerMode:true,
+            })
+            .then((willCancel)=>{
+                if (willCancel) {
+                    window.location.href=urlToRedirect;
+                }
+            });
+        }
+    </script>
+
+<footer class="footer">
           <div class="footer__block block no-margin-bottom">
             <div class="container-fluid text-center">
               <!-- Please do not remove the backlink to us unless you support us at https://bootstrapious.com/donate. It is part of the license conditions. Thank you for understanding :)-->

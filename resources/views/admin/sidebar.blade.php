@@ -19,6 +19,17 @@
                     <a href="{{ url('view_slide') }}"> <i class="fa fa-chevron-right"></i>Slider </a>
                 </li>
 
+                <li >
+                    <a class="{{ Request::is('student_list') ? 'active' : '' }}" href="#peopleDropdown" aria-expanded="false" data-toggle="collapse">
+                        <i class="fa fa-id-card"></i> People
+                    </a>
+                    <ul id="peopleDropdown" class="collapse list-unstyled">
+                        <li><a href="{{ url('student_list') }}"><i class="fa fa-users"></i> Student List</a></li>
+                        <li><a href="{{ url('teacher_info') }}"><i class="fa fa-user-plus"></i> Teacher Info</a></li>
+                        <li><a href="{{ url('student_report') }}"><i class="fa fa-file-text"></i> Student Report</a></li>
+                    </ul>
+                </li>
+
                 <li><a href="#exampledropdownDropdown" aria-expanded="false" data-toggle="collapse"> <i class="icon-windows"></i>Example dropdown </a>
                   <ul id="exampledropdownDropdown" class="collapse list-unstyled ">
                     <li><a href="#">Page</a></li>

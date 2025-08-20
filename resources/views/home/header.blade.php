@@ -7,9 +7,36 @@
           <!-- Right side: Button and Menu -->
           <div class="d-flex flex-column align-items-end w-100">
             <!-- Top: Join Button -->
-            <div>
-              <a href="#" class="btn mb-2 btn-research">Join Research</a>
-            </div>
+<div style="display: flex; gap: 10px;">
+
+
+    @if (Route::has('login'))
+
+    @auth
+    <!-- Log Out Button -->
+    <form method="POST" action="{{ route('logout') }}">
+        @csrf
+        <button type="submit" class="btn mb-2 btn-research">
+            Log Out
+        </button>
+    </form>
+
+    @else
+
+        <!-- Join Research Button -->
+    <a href="{{ route('register') }}" class="btn mb-2 btn-success">
+        Join Research
+    </a>
+
+    <a href="{{ route('login') }}" class="btn mb-2 btn-research">
+        Log In
+    </a>
+
+    @endauth
+
+    @endif
+
+</div>
 
             <!-- Bottom: Menu aligned to right -->
             <div

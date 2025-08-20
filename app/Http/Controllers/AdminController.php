@@ -4,6 +4,7 @@ namespace App\Http\Controllers;
 use App\Models\Logo;
 
 use App\Models\Slider;
+use App\Models\Student;
 use Illuminate\Http\Request;
 use Flasher\Laravel\Facade\Flasher;
 use Illuminate\Support\Facades\Storage;
@@ -138,5 +139,61 @@ class AdminController extends Controller
         return redirect('view_slide');
     }
 
+
+    //Student list part start
+    public function student_list(){
+        $students = Student::latest()->paginate(10);
+        return view('admin.student_list', compact('students'));
+    }
+
+    //Student Info update
+    public function upload_student(Request $request){
+        // Validation
+        $request->validate([
+            'name'        => 'required|string|max:255',
+            'designation' => 'nullable|string|max:255',
+            'phone'       => 'nullable|string|max:20',
+            'email'       => 'required|email|unique:students,email',
+            'facebook'    => 'nullable|url',
+            'twitter'     => 'nullable|url',
+            'github'      => 'nullable|url',
+            'image'       => 'nullable|image|mimes:jpg,jpeg,png|max:2048',
+        ]);
+
+        $data = $request->only([
+            'name', 'designation', 'phone', 'email', 'facebook', 'twitter', 'github'
+        ]);
+
+        // Handle image upload
+        if ($request->hasFile('image')) {
+            $filename = time() . '_' . $request->image->getClientOriginalName();
+            $request->image->move(public_path('uploads/students'), $filename);
+            $data['image'] = 'uploads/students/' . $filename; // save relative path
+        }
+
+        Student::create($data);
+        toastr()->info('Student added successfully!');
+        return redirect()->route('student_list')->with('success', 'Student added successfully!');
+    }
+
+        // Delete student
+    public function delete_student($id){
+        $student = Student::findOrFail($id);
+
+        if(file_exists(public_path($student->image))){
+            unlink(public_path($student->image));
+        }
+
+        $student->delete();
+
+        return redirect()->back()->with('success', 'Student info deleted successfully!');
+    }
+
+
+    //Teacher information start
+    public function teacher_info(){
+
+        return view('admin.teacher_info');
+    }
 
 }
