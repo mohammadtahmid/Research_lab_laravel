@@ -37,4 +37,8 @@ route::get('student_list',[AdminController::class,'student_list'])->name('studen
 route::post('upload_student',[AdminController::class,'upload_student'])->name('upload_student')->middleware(['auth','admin']);
 route::get('delete_student/{id}',[AdminController::class,'delete_student'])->middleware(['auth','admin']);
 //teacher info
-route::get('teacher_info',[AdminController::class,'teacher_info'])->middleware(['auth','admin']);
+route::get('teacher_info',[AdminController::class,'teacher_info'])->name('teacher_info')->middleware(['auth','admin']);
+route::post('teacher_personal',[AdminController::class,'teacher_personal'])->name('teacher_personal')->middleware(['auth','admin']);
+Route::delete('/teacher_personal/{id}', [AdminController::class, 'delete_teacher_personal'])->name('teacher_personal_delete');
+Route::get('/teacher_personal_edit/{id}', [AdminController::class, 'teacher_personal_edit'])->name('teacher_personal_edit');
+Route::put('/update_teacher_personal/{id}', [AdminController::class, 'update_teacher_personal'])->name('teacher_personal_update')->middleware(['auth','admin']);

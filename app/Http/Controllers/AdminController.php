@@ -5,6 +5,7 @@ use App\Models\Logo;
 
 use App\Models\Slider;
 use App\Models\Student;
+use App\Models\Teacher_personal;
 use Illuminate\Http\Request;
 use Flasher\Laravel\Facade\Flasher;
 use Illuminate\Support\Facades\Storage;
@@ -191,9 +192,103 @@ class AdminController extends Controller
 
 
     //Teacher information start
-    public function teacher_info(){
+public function teacher_info()
+{
+    $teachers = Teacher_personal::all();
+    return view('admin.teacher_info', compact('teachers'));
+}
 
-        return view('admin.teacher_info');
+    //upload teacher info
+    public function teacher_personal(Request $request){
+    // Validation
+    $request->validate([
+        'name'        => 'required|string|max:255',
+        'designation' => 'required|string|max:255',
+        'university'  => 'required|string|max:255',
+        'email' => 'required|email|unique:teacher_personals,email',
+        'image'       => 'nullable|image|mimes:jpg,jpeg,png|max:2048',
+    ]);
+
+    $imagePath = null;
+
+    if ($request->hasFile('image')) {
+        $folderName = str_replace(' ', '_', strtolower($request->name));
+        $fileName = time() . '.' . $request->file('image')->getClientOriginalExtension();
+        $request->file('image')->move(public_path('uploads/' . $folderName), $fileName);
+        $imagePath = 'uploads/' . $folderName . '/' . $fileName;
+    }
+
+    // Insert Data
+    Teacher_personal::create([
+        'image'       => $imagePath,
+        'name'        => $request->name,
+        'designation' => $request->designation,
+        'university'  => $request->university,
+        'location'    => $request->location,
+        'call'        => $request->call,
+        'email'       => $request->email,
+        'biography'   => $request->biography,
+        'facebook'    => $request->facebook,
+        'linkedin'    => $request->linkedin,
+        'github'      => $request->github,
+    ]);
+
+    return redirect()->route('teacher_info')->with('success', 'Teacher Information Saved Successfully!');
+    }
+
+    //Teacher personal Delete
+    public function delete_teacher_personal($id)
+    {
+        $teacher = Teacher_personal::findOrFail($id);
+
+        if($teacher->image && file_exists(public_path($teacher->image))){
+            unlink(public_path($teacher->image));
+        }
+
+        $teacher->delete();
+
+        return redirect()->back()->with('success', 'Teacher deleted successfully.');
+    }
+
+    // Edit page
+        public function teacher_personal_edit($id)
+        {
+            $teacher = Teacher_personal::findOrFail($id);
+            return view('admin.teacher_personal_edit', compact('teacher'));
+        }
+
+    // Update teacher info
+    public function update_teacher_personal(Request $request, $id)
+    {
+        $teacher = Teacher_personal::findOrFail($id);
+
+        // Validate input
+        $request->validate([
+            'name' => 'required|string|max:255',
+            'designation' => 'required|string|max:255',
+            'email' => 'required|email|unique:teacher_personals,email,'.$teacher->id,
+            'image' => 'nullable|image|mimes:jpeg,png,jpg,gif|max:2048',
+        ]);
+
+        $data = $request->all();
+
+        // Handle image upload
+        if ($request->hasFile('image')) {
+            if($teacher->image && file_exists(public_path($teacher->image))){
+                unlink(public_path($teacher->image));
+            }
+            $image = $request->file('image');
+            $imageName = time() . '.' . $image->getClientOriginalExtension();
+        $oldFolder = pathinfo($teacher->image, PATHINFO_DIRNAME);
+        $image->move(public_path($oldFolder), $imageName);
+        $data['image'] = $oldFolder . '/' . $imageName;
+        } else {
+            $data['image'] = $teacher->image; // keep old image
+        }
+
+        $teacher->update($data);
+
+        return redirect()->route('teacher_info')->with('success', 'Teacher updated successfully.');
     }
 
 }

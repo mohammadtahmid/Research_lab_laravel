@@ -21,7 +21,7 @@
                     <div class="col-md-6">
                         <div class="card shadow-lg p-4 rounded">
                             <h2 class="mb-4">Add Teacher Information</h2>
-                                <form action="" method="POST" enctype="multipart/form-data">
+                                <form action="{{ route('teacher_personal') }}" method="POST" enctype="multipart/form-data">
                                     @csrf
 
                                 <div class="form-group mb-3">
@@ -183,6 +183,77 @@
                         </div>
                     </div>
                 </div>
+
+
+<div class="mt-5">
+    <h2 class="mb-4 text-center">Teacher List</h2>
+
+    <div class="table-responsive">
+        <table class="table table-bordered table-striped table-hover align-middle">
+            <thead class="table-dark">
+                <tr>
+                    <th>Image</th>
+                    <th>Name</th>
+                    <th>Designation</th>
+                    <th>University</th>
+                    <th>Location</th>
+                    <th>Contact</th>
+                    <th>Email</th>
+                    <th>Social Links</th>
+                    <th>Action</th>
+                </tr>
+            </thead>
+            <tbody>
+                @foreach($teachers as $teacher)
+                <tr>
+                    <td>
+                        @if($teacher->image)
+                            <img src="{{ asset($teacher->image) }}" alt="{{ $teacher->name }}" width="70" class="rounded-circle">
+                        @else
+                            <span class="text-muted">No Image</span>
+                        @endif
+                    </td>
+                    <td>{{ $teacher->name }}</td>
+                    <td>{{ $teacher->designation }}</td>
+                    <td>{{ $teacher->university }}</td>
+                    <td>{{ $teacher->location }}</td>
+                    <td>{{ $teacher->call }}</td>
+                    <td>{{ $teacher->email }}</td>
+                    <td>
+                        @if($teacher->facebook)
+                            <a href="{{ $teacher->facebook }}" target="_blank" class="text-primary table-bordered p-2 me-2 fs-5">
+                                <i class="fa fa-facebook"></i>
+                            </a>
+                        @endif
+                        @if($teacher->linkedin)
+                            <a href="{{ $teacher->linkedin }}" target="_blank" class="text-info table-bordered p-2 me-2 fs-5">
+                                <i class="fa fa-linkedin"></i>
+                            </a>
+                        @endif
+                        @if($teacher->github)
+                            <a href="{{ $teacher->github }}" target="_blank" class="text-dark table-bordered p-2 fs-5">
+                                <i class="fa fa-github"></i>
+                            </a>
+                        @endif
+                    </td>
+                    <td>
+                        <a href="{{ route('teacher_personal_edit', $teacher->id) }}" class="btn btn-info btn-sm mb-1">
+                            <i class="fa fa-edit"></i> Edit
+                        </a>
+                        <form action="{{ route('teacher_personal_delete', $teacher->id) }}" method="POST" onsubmit="return confirm('Are you sure you want to delete this teacher?');">
+                            @csrf
+                            @method('DELETE')
+                            <button type="submit" class="btn btn-danger btn-sm">
+                                <i class="fa fa-trash"></i> Delete
+                            </button>
+                        </form>
+                    </td>
+                </tr>
+                @endforeach
+            </tbody>
+        </table>
+    </div>
+</div>
 
             </div>
       </div>
