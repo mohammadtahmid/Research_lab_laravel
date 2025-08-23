@@ -3,9 +3,10 @@
 namespace App\Providers;
 
 use App\Models\Logo;
+use App\Models\Article;
+use Illuminate\Pagination\Paginator;
 use Illuminate\Support\Facades\View;
 use Illuminate\Support\ServiceProvider;
-use Illuminate\Pagination\Paginator;
 
 class AppServiceProvider extends ServiceProvider
 {
@@ -28,6 +29,11 @@ class AppServiceProvider extends ServiceProvider
         });
 
         Paginator::useBootstrap();
+
+        View::composer('*', function ($view) {
+            $logo = Logo::latest()->first();
+            $view->with('logo', $logo);
+        });
     }
 
 

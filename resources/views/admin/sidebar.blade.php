@@ -26,8 +26,11 @@
                     <ul id="peopleDropdown" class="collapse list-unstyled">
                         <li><a href="{{ url('student_list') }}"><i class="fa fa-users"></i> Student List</a></li>
                         <li><a href="{{ url('teacher_info') }}"><i class="fa fa-user-plus"></i> Teacher Info</a></li>
-                        <li><a href="{{ url('student_report') }}"><i class="fa fa-file-text"></i> Student Report</a></li>
                     </ul>
+                </li>
+
+                <li class="{{ Request::is('view_article') ? 'active' : '' }}">
+                    <a href="{{ url('view_article') }}"> <i class="fa fa-flask"></i>Article </a>
                 </li>
 
                 <li><a href="#exampledropdownDropdown" aria-expanded="false" data-toggle="collapse"> <i class="icon-windows"></i>Example dropdown </a>

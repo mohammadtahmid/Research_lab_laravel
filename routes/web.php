@@ -39,6 +39,19 @@ route::get('delete_student/{id}',[AdminController::class,'delete_student'])->mid
 //teacher info
 route::get('teacher_info',[AdminController::class,'teacher_info'])->name('teacher_info')->middleware(['auth','admin']);
 route::post('teacher_personal',[AdminController::class,'teacher_personal'])->name('teacher_personal')->middleware(['auth','admin']);
-Route::delete('/teacher_personal/{id}', [AdminController::class, 'delete_teacher_personal'])->name('teacher_personal_delete');
-Route::get('/teacher_personal_edit/{id}', [AdminController::class, 'teacher_personal_edit'])->name('teacher_personal_edit');
-Route::put('/update_teacher_personal/{id}', [AdminController::class, 'update_teacher_personal'])->name('teacher_personal_update')->middleware(['auth','admin']);
+route::delete('/teacher_personal/{id}', [AdminController::class, 'delete_teacher_personal'])->name('teacher_personal_delete');
+route::get('/teacher_personal_edit/{id}', [AdminController::class, 'teacher_personal_edit'])->name('teacher_personal_edit');
+route::put('/update_teacher_personal/{id}', [AdminController::class, 'update_teacher_personal'])->name('teacher_personal_update')->middleware(['auth','admin']);
+route::post('teacher_detail_store',[AdminController::class,'teacher_detail_store'])->name('teacher_detail_store')->middleware(['auth','admin']);
+route::delete('/teacher_detail/{id}', [AdminController::class, 'delete_teacher_detail'])->name('teacher_detail_delete')->middleware(['auth','admin']);
+route::get('/teacher_detail_edit/{id}', [AdminController::class, 'teacher_detail_edit'])->name('teacher_detail_edit')->middleware(['auth','admin']);
+route::put('/teacher_detail_update/{id}', [AdminController::class, 'teacher_detail_update'])->name('teacher_detail_update')->middleware(['auth','admin']);
+//Article start
+route::get('view_article',[AdminController::class,'view_article'])->name('view_article')->middleware(['auth','admin']);
+route::post('/research_paper', [AdminController::class, 'research_paper'])->name('research_paper')->middleware(['auth','admin']);
+Route::get('research_paper_download/{filename}', [AdminController::class, 'research_paper_download'])->name('research_paper_download');
+
+
+
+//Home Student part
+route::get('/our_team',[HomeController::class,'our_team'])->name('home.our_team');

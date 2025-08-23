@@ -1,8 +1,12 @@
         <div class="container-fluid">
           <!-- Left side: Logo -->
-          <a class="navbar-brand" href="#">
-            <img src="assets/img/logo.png" alt="Logo" style="height: 40px" />
-          </a>
+        <a class="navbar-brand" href="/">
+            @if($logo)
+                <img src="{{ asset($logo->image) }}" alt="Logo" style="height:40px">
+            @else
+                <img src="{{ asset('default-logo.png') }}" alt="Default Logo" style="height:40px">
+            @endif
+        </a>
 
           <!-- Right side: Button and Menu -->
           <div class="d-flex flex-column align-items-end w-100">
@@ -47,7 +51,7 @@
                 <li class="nav-item dropdown">
                   <a
                     class="nav-link dropdown-toggle"
-                    href="index.html"
+                    href="/"
                     role="button"
                     data-bs-toggle="dropdown"
                     aria-expanded="false"
@@ -79,7 +83,7 @@
                     People
                   </a>
                   <ul class="dropdown-menu">
-                    <li><a class="dropdown-item" href="#">Action</a></li>
+                    <li><a class="dropdown-item" href="{{ route('home.our_team') }}">Our Team</a></li>
                     <li>
                       <a class="dropdown-item" href="#">Another action</a>
                     </li>

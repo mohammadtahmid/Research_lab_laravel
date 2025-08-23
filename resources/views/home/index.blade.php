@@ -88,18 +88,7 @@
         @include('home.student')
 
       </div>
-      <div class="d-flex justify-content-end py-4">
-                      <a
-                href="#"
-                style="
-                  color: #b80000;
-                  text-decoration: underline;
-                  font-weight: bold;
-                "
-                class=""
-                >VIEW ALL</a
-              >
-      </div>
+
     </div>
   <!-- Research member end -->
   <!-- Research member end -->

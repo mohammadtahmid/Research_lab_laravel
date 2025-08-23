@@ -92,15 +92,11 @@
                     <div class="col-md-6">
                         <div class="card shadow-lg p-4 rounded">
                             <h2 class="mb-4">Add Teacher Information</h2>
-                            <form action="" method="POST" enctype="multipart/form-data">
+                            <form action="{{ route('teacher_detail_store') }}" method="POST" enctype="multipart/form-data">
                                 @csrf
 
                                 <!-- Education Section -->
                                 <h4 class="mb-3 text-primary">Education</h4>
-                                <div class="form-group mb-3">
-                                    <label for="image">Profile Image</label>
-                                    <input type="file" name="image" class="form-control">
-                                </div>
                                 <div class="row mb-3">
                                     <div class="col">
                                         <label for="edu_year" class="form-label">Ending Year</label>
@@ -254,6 +250,74 @@
         </table>
     </div>
 </div>
+
+<br><br><br><br>
+
+<div class="mt-4">
+    <h2 class="mb-4">Teacher Details</h2>
+
+    <table class="table table-bordered table-hover">
+        <thead class="table-dark">
+            <tr>
+                <th>#</th>
+                <th>Teacher Name</th>
+                <th>Education</th>
+                <th>Professional Appointments</th>
+                <th>Awards & Prizes</th>
+                <th>Actions</th>
+            </tr>
+        </thead>
+        <tbody>
+            @foreach($teacher_details as $index => $detail)
+                <tr>
+                    <td>{{ $index + 1 }}</td>
+                    <td>{{ $detail->teacher->name ?? 'N/A' }}</td>
+
+                    <!-- Education -->
+                    <td>
+                        <strong>Year:</strong> {{ $detail->edu_year ?? '-' }}<br>
+                        <strong>Degree:</strong> {{ $detail->edu_degree ?? '-' }}<br>
+                        <strong>University:</strong> {{ $detail->edu_university ?? '-' }}<br>
+                        <strong>Location:</strong> {{ $detail->edu_location ?? '-' }}
+                    </td>
+
+                    <!-- Professional Appointments -->
+                    <td>
+                        <strong>Start:</strong> {{ $detail->pro_start ?? '-' }}<br>
+                        <strong>End:</strong> {{ $detail->pro_end ?? '-' }}<br>
+                        <strong>Designation:</strong> {{ $detail->pro_designation ?? '-' }}<br>
+                        <strong>Organization:</strong> {{ $detail->pro_organization ?? '-' }}<br>
+                        <strong>Location:</strong> {{ $detail->pro_location ?? '-' }}
+                    </td>
+
+                    <!-- Awards & Prizes -->
+                    <td>
+                        <strong>Year:</strong> {{ $detail->award_year ?? '-' }}<br>
+                        <strong>Organization:</strong> {{ $detail->award_org ?? '-' }}<br>
+                        <strong>Location:</strong> {{ $detail->award_location ?? '-' }}<br>
+                        <strong>Responsibility:</strong> {{ $detail->award_responsibility ?? '-' }}
+                    </td>
+
+                    <!-- Actions -->
+                    <td>
+                        <a href="{{ route('teacher_detail_edit', $detail->id) }}" class="btn btn-sm btn-info mb-1">
+                            <i class="fa fa-edit"></i> Edit
+                        </a>
+                        <form action="{{ route('teacher_detail_delete', $detail->id) }}" method="POST" style="display:inline-block;">
+                            @csrf
+                            @method('DELETE')
+                            <button type="submit" class="btn btn-sm btn-danger mb-1">
+                                <i class="fa fa-trash"></i> Delete
+                            </button>
+                        </form>
+
+                    </td>
+                </tr>
+            @endforeach
+        </tbody>
+    </table>
+</div>
+
 
             </div>
       </div>
