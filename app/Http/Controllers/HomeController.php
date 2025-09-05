@@ -41,4 +41,11 @@ class HomeController extends Controller
         $students = Student::all();
         return view('home.our_team',compact('teacher_personal','students'));
     }
+
+
+    //Home article page show
+    public function article(){
+        $articles_page = Article::orderBy('paper_year', 'desc')->get()->groupBy('paper_year');
+        return view('home.article', compact('articles_page'));
+    }
 }

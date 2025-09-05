@@ -55,3 +55,7 @@ Route::get('research_paper_download/{filename}', [AdminController::class, 'resea
 
 //Home Student part
 route::get('/our_team',[HomeController::class,'our_team'])->name('home.our_team');
+
+
+//article page
+route::get('/article',[HomeController::class,'article'])->name('home.article');
